@@ -1,0 +1,32 @@
+[package]
+name = "diesel_crudable"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description.workspace = true
+keywords.workspace = true
+categories.workspace = true
+repository.workspace = true
+readme.workspace = true
+
+[features]
+default = ["derive"]
+derive = ["dep:diesel_crudable_derive"]
+
+[dependencies]
+diesel = { version = "2.3.9", default-features = false }
+diesel-async = { version = "0.9.0", default-features = false }
+diesel_crudable_derive = { path = "diesel_crudable_derive", version = "0.1.0", optional = true }
+
+[workspace]
+members = ["diesel_crudable_derive"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+description = "Generic, backend-agnostic CRUD traits and derive macros for diesel-async"
+keywords = ["diesel", "diesel-async", "crud", "derive", "orm"]
+categories = ["database", "asynchronous"]
+repository = "https://github.com/tohackacat/diesel_crudable"
+readme = "README.md"
